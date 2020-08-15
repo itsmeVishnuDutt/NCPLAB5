@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern printer</title>
+    <script>
+        function print_pattern(){
+        let a = []
+        let n = prompt("Enter a number:")
+        a.push(parseInt(n))
+        while (n) {
+            n = prompt("Enter a number:")
+            a.push(parseInt(n))
+        }
+        let ul = document.getElementById('ul')
+        for (let i = 0; i < a.length - 1; i++) {
+            li = document.createElement('li')
+            li.appendChild(document.createTextNode(hist(a[i])))
+            ul.appendChild(li)
+        }
+
+        function hist(s) {
+            let str = ""
+            for (let i = 0; i < s; i++) {
+                str += '*'
+            }
+            return str
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="ul"></ul>
+    <button style="text-align: center;" onclick="print_pattern()"><b>click on this to see working</b></button>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        Add text: <input type="text" name="" id="name">
+        <input type="submit" value="Add name">
+    </form>
+    <h3>Result</h3>
+    <h4 id="answer">none</h4>
+    <script>
+        input = document.getElementById('name')
+        input.value = ''
+
+        document.forms[0].addEventListener('submit', function (e) {
+            to_show = input.value.split(' ')
+            document.querySelector('#answer').innerHTML = to_show
+            e.preventDefault()
+        })        
+    </script>
+</body>
+
+</html>
